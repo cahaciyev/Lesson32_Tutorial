@@ -9,7 +9,7 @@ public interface TutorialService {
     int update(TutorialDto book);
     TutorialDto findById(Long id);
     int deleteById(Long id);
-    List<TutorialDto> findAll();
+    List<TutorialDto> getAllTutorial();
     List<TutorialDto> findByPublished(boolean published);
     List<TutorialDto> findByTitleContaining(String title);
     int deleteAll();

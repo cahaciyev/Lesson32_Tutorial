@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/v1")
 public class ApiController {
     @Autowired
     TutorialService service;
 
-    @GetMapping("/findall")
+    @GetMapping("/get-all-tutorial")
     public List<TutorialDto> getAllTutorial() {
-        return service.findAll();
+        return service.getAllTutorial();
     }
 
     @GetMapping("/findbyid")
