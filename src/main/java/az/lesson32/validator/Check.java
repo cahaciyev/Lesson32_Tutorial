@@ -17,21 +17,21 @@ public class Check {
         this.template = template;
     }
     public void idChecker(Long id) {
-        Boolean ifExists = template.queryForObject("SELECT EXISTS (SELECT 1 FROM lesson32.tutorial WHERE id = ?)", Boolean.class, id);
+        Boolean ifExists = template.queryForObject("SELECT EXISTS (SELECT 1 FROM lesson32.tutorials WHERE id = ?)", Boolean.class, id);
         if (Boolean.FALSE.equals(ifExists)) {
             throw new IDNotFoundException("ID number " + id + " not found");
         }
     }
 
     public void isDataBaseEmpty() {
-        Boolean isEmpty = template.queryForObject("SELECT EXISTS (SELECT 1 FROM lesson32.tutorial)", Boolean.class);
+        Boolean isEmpty = template.queryForObject("SELECT EXISTS (SELECT 1 FROM lesson32.tutorials)", Boolean.class);
         if (Boolean.FALSE.equals(isEmpty)) {
             throw new DatabaseIsEmptyException("Database is empty");
         }
     }
 
     public void elementChecker(String element) {
-        Boolean ifExists = template.queryForObject("SELECT EXISTS (SELECT 1 FROM lesson32.tutorial WHERE title = ?)", Boolean.class, element);
+        Boolean ifExists = template.queryForObject("SELECT EXISTS (SELECT 1 FROM lesson32.tutorials WHERE title = ?)", Boolean.class, element);
         if (Boolean.FALSE.equals(ifExists)) {
             throw new NoSuchElementException(element + " not found in DB");
         }

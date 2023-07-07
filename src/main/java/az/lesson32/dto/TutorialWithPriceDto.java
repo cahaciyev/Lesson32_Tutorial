@@ -1,16 +1,15 @@
 package az.lesson32.dto;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
 
 @Data
-@NoArgsConstructor
-@Component
-public class TutorialDto {
-    private int id;
+@Builder
+public class TutorialWithPriceDto {
     private String title;
     private String name;
     private String subject;
     private boolean published;
+    private double price;
 }

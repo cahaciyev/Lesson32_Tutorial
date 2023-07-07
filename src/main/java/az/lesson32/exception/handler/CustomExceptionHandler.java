@@ -51,13 +51,6 @@ public class CustomExceptionHandler {
         exceptionModel.setErrorMessage(ex.getMessage());
         return ResponseEntity.status(ex.getHttpStatus()).body(exceptionModel);
     }
-    @ExceptionHandler(DatabaseIsEmptyException.class)
-    public ResponseEntity<ExceptionModel> handleException(NoSuchElementException ex) {
-        exceptionModel.setErrorCode(ex.getHttpStatus().value());
-        exceptionModel.setErrorTime(LocalDateTime.now());
-        exceptionModel.setErrorStatus(ex.getHttpStatus());
-        exceptionModel.setErrorMessage(ex.getMessage());
-        return ResponseEntity.status(ex.getHttpStatus()).body(exceptionModel);
-    }
+
 
 }

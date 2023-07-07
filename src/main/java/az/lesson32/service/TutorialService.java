@@ -1,6 +1,7 @@
 package az.lesson32.service;
 
 import az.lesson32.dto.TutorialDto;
+import az.lesson32.dto.TutorialWithPriceDto;
 
 import java.util.List;
 
@@ -13,4 +14,5 @@ public interface TutorialService {
     List<TutorialDto> findByPublished(boolean published);
     List<TutorialDto> findByTitleContaining(String title);
     int deleteAll();
+     TutorialWithPriceDto getTutorialAndPrice(Long id);
 }

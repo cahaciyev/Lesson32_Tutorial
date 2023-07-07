@@ -7,10 +7,6 @@ import org.springframework.http.HttpStatus;
 public class DatabaseIsEmptyException extends RuntimeException {
 
    private final HttpStatus httpStatus = HttpStatus.NO_CONTENT;
-    public DatabaseIsEmptyException() {
-
-    }
-
     public DatabaseIsEmptyException(String message) {
         super(message);
     }
